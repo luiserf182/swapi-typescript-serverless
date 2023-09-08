@@ -1,0 +1,61 @@
+{
+  "name": "rimac-swapi-demo",
+  "version": "1.0.0",
+  "description": "Rimac start wars api",
+  "keywords": [
+    "api",
+    "express",
+    "prisma",
+    "typescript"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll ",
+    "test-unit": "jest --watchAll unit.test.ts",
+    "test-api": "jest --watchAll --runInBand integration.test.ts",
+    "start": "nodemon index.ts",
+    "dev": "cross-env NODE_ENV=development sls offline start --stage offline",
+    "deploy": "cross-env NODE_ENV=production sls deploy --stage prod"
+  },
+  "engines": {
+    "node": "v14.19.0"
+  },
+  "author": "luisfuentes",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.8.1",
+    "ajv": "^8.11.0",
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1",
+    "esbuild": "^0.19.2",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.1",
+    "lodash": "^4.17.21",
+    "serverless-http": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.14",
+    "@types/jest": "^28.1.1",
+    "@types/lodash": "^4.14.182",
+    "@types/node": "^17.0.42",
+    "@types/supertest": "^2.0.12",
+    "@types/swagger-jsdoc": "^6.0.1",
+    "@types/swagger-ui-express": "^4.1.3",
+    "esbuild-register": "^3.3.3",
+    "jest": "^28.1.1",
+    "prisma": "^4.8.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.0",
+    "supertest": "^6.2.3",
+    "ts-jest": "^28.0.5",
+    "typescript": "^4.7.3",
+    "serverless": "^3.34.0",
+    "serverless-dotenv-plugin": "^6.0.0",
+    "serverless-esbuild": "^1.46.0",
+    "serverless-offline": "^12.0.4"
+  }
+}

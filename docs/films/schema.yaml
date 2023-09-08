@@ -1,0 +1,17 @@
+definitions:
+  film_create:
+    type: object
+    properties:
+      id:
+        type: integer
+        required: true
+  film_id:
+  type: object
+  properties:
+    id:
+      type: integer
+  error:
+    type: object
+    properties:
+      message:
+        type: string

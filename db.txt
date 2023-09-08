@@ -1,0 +1,18 @@
+  CREATE TABLE `dbo`.`Peliculas` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(100) NOT NULL,
+  `episodio_id` int DEFAULT NULL,
+  `texto_apertura` varchar(45) DEFAULT NULL,
+  `director` varchar(45) DEFAULT NULL,
+  `productor` varchar(45) DEFAULT NULL,
+  `lanzamiento` varchar(45) DEFAULT NULL,
+  `actores` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `planetas` json DEFAULT NULL,
+  `naveestelar` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `vehiculos` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `especies` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `creado` varchar(45) DEFAULT NULL,
+  `editado` varchar(45) DEFAULT NULL,
+  `url` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

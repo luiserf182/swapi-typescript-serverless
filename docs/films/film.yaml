@@ -1,0 +1,82 @@
+paths:
+  /films:
+    get:
+      tags:
+        - Films
+      description: Get all the films
+      responses:
+        200:
+          description: All registered users found
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#definitions/users'
+    post:
+      tags:
+        - Films
+      security:
+        - bearerAuth: []
+      description: Create a film
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#definitions/film_create'
+      responses:
+        201:
+          description: Film created
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#definitions/user_id'
+  /films/{id}:
+    parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+        required: true
+        description: The id of the record to query
+    get:
+      tags:
+        - Films
+      description: Get the film by id
+      responses:
+        200:
+          description: Found the film by id
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#definitions/film'
+        404:
+          description: The film was not found by id
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#definitions/error'
+
+  /films/pelicula/{titulo}:
+    parameters:
+      - name: titulo
+        in: path
+        schema:
+          type: string
+        required: true
+        description: The titulo of the record to query
+    get:
+      tags:
+        - Films
+      description: Get the pelicula by titulo
+      responses:
+        200:
+          description: Found the film by id
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#definitions/film'
+        404:
+          description: The film was not found by id
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#definitions/error'

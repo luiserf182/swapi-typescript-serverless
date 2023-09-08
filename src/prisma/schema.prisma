@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DB_URL")
+}
+
+model Peliculas {
+  id             Int @id @default(autoincrement())
+  titulo         String
+  episodio_id    Int
+  texto_apertura String
+  director String
+  productor String
+  lanzamiento String
+  actores String
+  planetas String
+  naveestelar String
+  vehiculos String
+  especies String
+  creado String
+  editado String
+  url String
+  @@unique([id], map: "id")
+  @@unique([titulo], map: "titulo")
+}
+
+model Film {
+  id             Int @id @default(autoincrement())
+  titulo         String
+  episodio_id    String
+  texto_apertura String
+  director String
+  productor String
+  lanzamiento String
+  actores String
+  planetas String
+  naveestelar String
+  vehiculos String
+  especies String
+  creado String
+  editado String
+  url String
+  @@unique([id], map: "id")
+}
